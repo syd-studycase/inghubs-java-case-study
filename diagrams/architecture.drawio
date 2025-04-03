@@ -1,0 +1,75 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.0.0 Safari/537.36" version="26.2.4">
+  <diagram name="Page-1" id="l2N-2DvhEU-V21tA-5V3">
+    <mxGraphModel dx="1356" dy="719" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-18" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="280" y="120" width="740" height="460" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="taUl1hFcQ3wPtOsSsapA-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="110" y="296" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-1" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="20" y="266" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-3" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="420" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="taUl1hFcQ3wPtOsSsapA-5" target="taUl1hFcQ3wPtOsSsapA-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="taUl1hFcQ3wPtOsSsapA-5" target="taUl1hFcQ3wPtOsSsapA-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-5" value="Order" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-7" value="Asset" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-8" value="Costumer" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="680" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-9" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="800" y="230" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-10" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.database;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="560" y="140" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-11" value="Eureka Server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-12" value="Config Server" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="530" y="620" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-14" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.classic_load_balancer;fillColor=#F58534;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="130" y="260" width="69" height="72" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-16" value="API Gateway" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="119.5" y="340" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="taUl1hFcQ3wPtOsSsapA-14" target="taUl1hFcQ3wPtOsSsapA-5">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="450" as="sourcePoint" />
+            <mxPoint x="450" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-21" value="" style="endArrow=classic;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="taUl1hFcQ3wPtOsSsapA-14" target="taUl1hFcQ3wPtOsSsapA-7">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="450" as="sourcePoint" />
+            <mxPoint x="450" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-22" value="/orders" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="290" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="taUl1hFcQ3wPtOsSsapA-23" value="/assets" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="300" y="370" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
