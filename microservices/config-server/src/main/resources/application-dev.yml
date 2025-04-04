@@ -9,8 +9,12 @@ spring:
       server:
         boostrap: false
         git:
-          uri: https://github.com/syd-studycase/inghubs-java-case-study/configs
+          uri: https://github.com/syd-studycase/inghubs-java-case-study
+          search-paths: configs
           clone-on-start: true
+          default-label: main
+          username: syd_studycase
+          password: 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
 
 eureka:
   client:
