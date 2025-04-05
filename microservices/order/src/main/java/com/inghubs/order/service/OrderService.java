@@ -118,7 +118,7 @@ public class OrderService {
 
     }
 
-    public void cancelOrder(Long orderId){
+    public boolean cancelOrder(Long orderId){
         logger.info("Cancelling order with ID: {}", orderId);
 
         Order order = orderRepository.findByIdAndStatus(orderId, OrderStatus.PENDING)
@@ -136,6 +136,7 @@ public class OrderService {
         }
 
         logger.info("Order cancelled successfully: {}", orderId);
+        return true;
     }
 
     private void returnTryFundsForCancelledBuyOrder(Order order) {
