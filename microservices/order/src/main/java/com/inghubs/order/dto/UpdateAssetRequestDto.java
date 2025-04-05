@@ -1,11 +1,13 @@
-package com.inghubs.order.asset;
+package com.inghubs.order.dto;
+
 
 import java.math.BigDecimal;
 
-public record AssetDto(
+public record UpdateAssetRequestDto(
         Long id,
         Long customerId,
         String assetName,
         BigDecimal size,
         BigDecimal usableSize
-) {}
+) {
+}

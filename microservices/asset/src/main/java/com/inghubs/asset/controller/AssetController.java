@@ -28,9 +28,9 @@ public class AssetController {
 
     @GetMapping("/customer/{customerId}/asset/{assetName}")
     public ResponseEntity<AssetDto> getAssetByCustomerIdAndAssetName(
-            @PathVariable Long customerId,
+            @PathVariable String customerId,
             @PathVariable String assetName) {
-        return ResponseEntity.ok(assetService.getAssetByCustomerIdAndAssetName(customerId, assetName));
+        return ResponseEntity.ok(assetService.getAssetByCustomerIdAndAssetName(Long.valueOf(customerId), assetName));
     }
 
     @PutMapping("/update")
