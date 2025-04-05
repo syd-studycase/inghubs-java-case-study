@@ -11,6 +11,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
@@ -45,8 +46,8 @@ public class AssetServiceTest {
         tryAsset = new Asset(
                 customerId,
                 tryAssetName,
-                1000,
-                300
+                BigDecimal.valueOf(1000),
+                BigDecimal.valueOf(300)
         );
 
         tryAsset.setId(1L);
@@ -55,15 +56,15 @@ public class AssetServiceTest {
                 tryAsset.getId(),
                 customerId,
                 tryAssetName,
-                1000,
-                300
+                BigDecimal.valueOf(1000),
+                BigDecimal.valueOf(300)
         );
 
         aselsAsset = new Asset(
                 customerId,
                 aselsAssetName,
-                100,
-                80
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(80)
         );
 
         aselsAsset.setId(2L);
@@ -72,8 +73,8 @@ public class AssetServiceTest {
                 aselsAsset.getId(),
                 customerId,
                 aselsAssetName,
-                1000,
-                300
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(80)
         );
 
 
@@ -107,7 +108,7 @@ public class AssetServiceTest {
         // Then
         assertEquals(tryAssetName, assetDto.assetName());
         assertEquals(customerId, assetDto.customerId());
-        assertEquals(1000, assetDto.size());
+        assertEquals(BigDecimal.valueOf(1000), assetDto.size());
     }
 
     @Test

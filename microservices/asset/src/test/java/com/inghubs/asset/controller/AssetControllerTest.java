@@ -11,6 +11,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,8 +43,8 @@ public class AssetControllerTest {
         tryAsset = new Asset(
                 customerId,
                 tryAssetName,
-                1000,
-                300
+                BigDecimal.valueOf(1000),
+                BigDecimal.valueOf(300)
         );
 
         tryAsset.setId(1L);
@@ -52,15 +53,15 @@ public class AssetControllerTest {
                 tryAsset.getId(),
                 customerId,
                 tryAssetName,
-                1000,
-                300
+                BigDecimal.valueOf(1000),
+                BigDecimal.valueOf(300)
         );
 
         aselsAsset = new Asset(
                 customerId,
                 aselsAssetName,
-                100,
-                80
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(80)
         );
 
         aselsAsset.setId(2L);
@@ -69,8 +70,8 @@ public class AssetControllerTest {
                 aselsAsset.getId(),
                 customerId,
                 aselsAssetName,
-                1000,
-                300
+                BigDecimal.valueOf(100),
+                BigDecimal.valueOf(80)
         );
 
     }

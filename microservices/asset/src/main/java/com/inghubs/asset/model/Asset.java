@@ -2,6 +2,8 @@ package com.inghubs.asset.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "assets")
 public class Asset {
@@ -17,16 +19,16 @@ public class Asset {
         private String assetName;
 
         @Column(name = "asset_size")
-        private int size;
+        private BigDecimal size;
 
         @Column(name = "usable_size")
-        private int usableSize;
+        private BigDecimal usableSize;
 
         public Asset() {
 
         }
 
-        public Asset(Long customerId, String assetName, int size, int usableSize) {
+        public Asset(Long customerId, String assetName, BigDecimal size, BigDecimal usableSize) {
                 this.customerId = customerId;
                 this.assetName = assetName;
                 this.size = size;
@@ -57,19 +59,19 @@ public class Asset {
                 this.assetName = assetName;
         }
 
-        public int getSize() {
+        public BigDecimal getSize() {
                 return size;
         }
 
-        public void setSize(int size) {
+        public void setSize(BigDecimal size) {
                 this.size = size;
         }
 
-        public int getUsableSize() {
+        public BigDecimal getUsableSize() {
                 return usableSize;
         }
 
-        public void setUsableSize(int usableSize) {
+        public void setUsableSize(BigDecimal usableSize) {
                 this.usableSize = usableSize;
         }
 
