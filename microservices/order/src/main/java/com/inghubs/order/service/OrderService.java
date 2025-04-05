@@ -118,12 +118,59 @@ public class OrderService {
 
     }
 
-    public void cancelOrder(Long orderId) {
+    public void cancelOrder(Long orderId){
+        logger.info("Cancelling order with ID: {}", orderId);
+
         Order order = orderRepository.findByIdAndStatus(orderId, OrderStatus.PENDING)
-                .orElseThrow(() -> new OrderNotFoundException("Order not found or cannot be canceled"));
+                .orElseThrow(() -> new OrderNotFoundException("Pending order not found with ID: " + orderId));
 
+        // Update order status
+        order.setStatus(OrderStatus.CANCELLED);
+        orderRepository.save(order);
 
-        //assetServiceClient.refund(order.getCustomerId(), order.getAssetName(), order.getOrderSize());
-        orderRepository.delete(order);
+        // Return funds to usable balance
+        if (order.getOrderSide() == OrderSide.BUY) {
+            returnTryFundsForCancelledBuyOrder(order);
+        } else {
+            returnAssetForCancelledSellOrder(order);
+        }
+
+        logger.info("Order cancelled successfully: {}", orderId);
+    }
+
+    private void returnTryFundsForCancelledBuyOrder(Order order) {
+        AssetDto tryAssetDto = assetServiceClient.getAssetByCustomerIdAndAssetName(String.valueOf(order.getCustomerId()), TRY_ASSET)
+                .orElseThrow(() -> new AssetNotFoundException("Customer does not have TRY asset"));
+
+        // Calculate return amount
+        BigDecimal returnAmount = order.getOrderSize().multiply(order.getPrice());
+        BigDecimal updatedUsableSize = tryAssetDto.usableSize().add(returnAmount);
+
+        UpdateAssetRequestDto updateAssetRequestDto = new UpdateAssetRequestDto(tryAssetDto.id(),
+                tryAssetDto.customerId(), tryAssetDto.assetName(),
+                tryAssetDto.size(), updatedUsableSize);
+
+        // Update TRY Asset usable size
+        assetServiceClient.updateAsset(updateAssetRequestDto);
+        logger.debug("Asset updated: {}", updateAssetRequestDto);
+        logger.info("Updating asset for customer: {}", updateAssetRequestDto.customerId());
+
+    }
+
+    private void returnAssetForCancelledSellOrder(Order order) {
+        AssetDto assetDto = assetServiceClient.getAssetByCustomerIdAndAssetName(String.valueOf(order.getCustomerId()), order.getAssetName())
+                .orElseThrow(() -> new AssetNotFoundException("Customer does not have required asset"));
+
+        // Calculate usable size
+        BigDecimal updatedUsableSize = assetDto.usableSize().add(order.getOrderSize());
+
+        UpdateAssetRequestDto updateAssetRequestDto = new UpdateAssetRequestDto(assetDto.id(),
+                assetDto.customerId(), assetDto.assetName(),
+                assetDto.size(), updatedUsableSize);
+
+        // Update Asset usable size
+        assetServiceClient.updateAsset(updateAssetRequestDto);
+        logger.debug("Asset updated: {}", updateAssetRequestDto);
+        logger.info("Updating asset for customer: {}", updateAssetRequestDto.customerId());
     }
 }
