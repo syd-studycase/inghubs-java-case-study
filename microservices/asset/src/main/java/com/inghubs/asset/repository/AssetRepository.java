@@ -14,4 +14,5 @@ public interface AssetRepository extends JpaRepository<Asset, Long> {
 
     List<Asset> findByCustomerId(Long customerId);
 
+    boolean existsByCustomerIdAndAssetName(Long customerId, String assetName);
 }

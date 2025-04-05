@@ -1,6 +1,8 @@
 package com.inghubs.asset.service;
 
 import com.inghubs.asset.dto.AssetDto;
+import com.inghubs.asset.dto.CreateAssetRequestDto;
+import com.inghubs.asset.dto.UpdateAssetRequestDto;
 import com.inghubs.asset.model.Asset;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +30,35 @@ public class AssetMapper {
                 asset.getSize(),
                 asset.getUsableSize()
         );
+    }
+
+    public Asset toAsset(UpdateAssetRequestDto updateAssetRequestDto) {
+
+        if (updateAssetRequestDto == null) {
+            return null;
+        }
+
+        Asset asset = new Asset(
+                updateAssetRequestDto.customerId(),
+                updateAssetRequestDto.assetName(),
+                updateAssetRequestDto.size(),
+                updateAssetRequestDto.usableSize());
+
+        asset.setId(updateAssetRequestDto.id());
+        return asset;
+    }
+
+    public Asset toAsset(CreateAssetRequestDto createAssetRequestDto) {
+
+        if (createAssetRequestDto == null) {
+            return null;
+        }
+
+        return new Asset(
+                createAssetRequestDto.customerId(),
+                createAssetRequestDto.assetName(),
+                createAssetRequestDto.size(),
+                createAssetRequestDto.usableSize());
+
     }
 }
