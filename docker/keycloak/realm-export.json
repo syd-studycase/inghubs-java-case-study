@@ -484,10 +484,10 @@
   "webAuthnPolicyPasswordlessExtraOrigins": [],
   "users": [
     {
-      "id": "3a38b3a5-696c-4b5c-a1a0-16a1eae22312",
+      "id": "d2b8bb72-4e43-49d5-8d22-05269b15b0b6",
       "username": "service-account-inghubs-api",
       "emailVerified": false,
-      "createdTimestamp": 1743938914073,
+      "createdTimestamp": 1743943487219,
       "enabled": true,
       "totp": false,
       "serviceAccountClientId": "inghubs-api",
@@ -724,19 +724,27 @@
       "consentRequired": false,
       "standardFlowEnabled": false,
       "implicitFlowEnabled": false,
-      "directAccessGrantsEnabled": false,
+      "directAccessGrantsEnabled": true,
       "serviceAccountsEnabled": true,
       "authorizationServicesEnabled": true,
       "publicClient": false,
       "frontchannelLogout": true,
       "protocol": "openid-connect",
       "attributes": {
-        "oidc.ciba.grant.enabled": "false",
         "client.secret.creation.time": "1743938914",
-        "backchannel.logout.session.required": "true",
         "oauth2.device.authorization.grant.enabled": "false",
+        "backchannel.logout.revoke.offline.tokens": "false",
+        "use.refresh.tokens": "true",
+        "oidc.ciba.grant.enabled": "false",
+        "client.use.lightweight.access.token.enabled": "false",
+        "backchannel.logout.session.required": "true",
+        "client_credentials.use_refresh_token": "false",
+        "tls.client.certificate.bound.access.tokens": "false",
+        "require.pushed.authorization.requests": "false",
+        "acr.loa.map": "{}",
         "display.on.consent.screen": "false",
-        "backchannel.logout.revoke.offline.tokens": "false"
+        "request.uris": "*",
+        "token.response.type.bearer.lower-case": "false"
       },
       "authenticationFlowBindingOverrides": {},
       "fullScopeAllowed": true,
@@ -810,7 +818,7 @@
             "type": "urn:inghubs-api:resources:default",
             "ownerManagedAccess": false,
             "attributes": {},
-            "_id": "75caa27e-dc04-421c-bf0a-dc0c1021cc14",
+            "_id": "0c7e8e33-b905-47ac-8e57-a4f23ac4c2fc",
             "uris": [
               "/*"
             ]
@@ -818,7 +826,7 @@
         ],
         "policies": [
           {
-            "id": "ba1afa6f-a535-40df-a8d3-317ddbb99a19",
+            "id": "bd043df9-6315-44b7-8b8c-9c99e22904f9",
             "name": "Default Policy",
             "description": "A policy that grants access only for users within this realm",
             "type": "js",
@@ -829,7 +837,7 @@
             }
           },
           {
-            "id": "7f59dca1-c075-44b8-a83e-10d27e9c914a",
+            "id": "79541ece-1582-4dd3-b220-2f18cb24798e",
             "name": "Default Permission",
             "description": "A permission that applies to the default resource type",
             "type": "resource",
